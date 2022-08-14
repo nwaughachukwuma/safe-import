@@ -33,3 +33,19 @@ test('only named import', async (t) => {
     t.not(indexFile.namedFunction2, undefined)
     t.is(indexFile.namedFunction2.name, 'namedFunction2')
 })
+
+test('safely import cjs file', async (t) => {
+    const indexFile = await safeImport('../test/namedFunction.cjs')
+    
+    t.not(indexFile.default, undefined)
+    t.is(indexFile.default.name, 'namedFunction')
+    t.is(indexFile.namedFunction, undefined)
+})
+
+test('safely import cjs file, default only', async (t) => {
+    const indexFile = await safeImport('../test/namedFunction.cjs', {onlyDefault: true})
+    
+    t.not(indexFile, undefined)
+    t.is(indexFile.name, 'namedFunction')
+    t.is(indexFile.namedFunction, undefined)
+})
