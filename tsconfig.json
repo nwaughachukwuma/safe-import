@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "incremental": true,
+      "target": "es6",
+      "lib": ["es6", "dom"],
+      "module": "esnext",
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "outDir": "./lib",
+      "baseUrl": ".",
+      "declaration": true,
+      "noEmit": false,
+      "emitDeclarationOnly": true,
+      "noImplicitReturns": true,
+      "resolveJsonModule": true,
+      "skipLibCheck": true
+    },
+    "include": ["index.ts"],
+    "exclude": ["node_modules", "lib"]
+  }
+  
